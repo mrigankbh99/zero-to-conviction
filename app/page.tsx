@@ -1,101 +1,146 @@
-import Image from "next/image";
+import Link from 'next/link'
+import Image from 'next/image'
+import SubscribeForm from '@/components/subscribe-form'
+
+const allDives = [
+  {
+    num: '01',
+    title: 'Stablecoin Remittances & Wealth Management: The India Thesis',
+    slug: 'stablecoins-india-remittance',
+    desc: "India receives $137 billion in remittances a year, more than Mexico and China combined. About $8.3 billion of that gets eaten in fees. Here's why stablecoins fix this, and what the real play actually is.",
+  },
+]
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="bg-surface text-on-surface">
+
+      {/* ── HERO ─────────────────────────────────────────── */}
+      <section className="px-8 max-w-screen-2xl mx-auto mb-20 md:mb-24">
+        <div className="editorial-grid gap-y-12 items-start">
+
+          {/* Photo column */}
+          <div className="col-span-12 md:col-span-3 mb-8 md:mb-0">
+            <div className="aspect-square grayscale hover:grayscale-0 transition-all duration-700 overflow-hidden border border-outline-variant/30">
+              <Image
+                src="/mrigank.jpg"
+                alt="Mrigank"
+                width={400}
+                height={400}
+                className="w-full h-full object-cover object-top"
+                priority
+              />
+            </div>
+            <p className="mt-6 text-[10px] uppercase tracking-[0.2em] font-bold text-on-surface-variant font-label">
+              Mrigank — Founder &amp; Researcher
+            </p>
+          </div>
+
+          {/* Headline column */}
+          <div className="col-span-12 md:col-start-5 md:col-span-8">
+            <span className="text-[10px] uppercase tracking-[0.3em] text-on-surface-variant font-bold font-label mb-8 block">
+              Zero to Conviction
+            </span>
+
+            <h1 className="font-headline font-bold text-4xl md:text-6xl leading-[0.95] tracking-tighter text-primary mb-10">
+              Observations,{' '}
+              <span className="italic font-normal">Insights,</span>{' '}
+              and Everything in Between.
+            </h1>
+
+            <p className="font-body text-base md:text-lg leading-relaxed text-on-surface-variant">
+              I like building things and I like understanding how industries actually work.
+              Scaled a DeFi product to over a million wallets. Built smaller AI projects,
+              healthcare tools, a cooking agent, things I had hunches about, that got to
+              interesting places before the conviction ran out. Now I write about what
+              I&apos;m still trying to figure out.
+            </p>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* ── CONVICTION DIVIDER ────────────────────────────── */}
+      <div className="w-full px-8 max-w-screen-2xl mx-auto mb-20">
+        <div className="w-full h-[1px] bg-outline-variant/30 relative">
+          <div className="absolute top-0 left-0 h-[2px] bg-primary w-1/3" />
+          <div className="absolute -top-3 left-1/3 transform -translate-x-1/2 bg-surface px-4 py-1">
+            <span className="font-label text-[10px] uppercase tracking-widest font-bold">
+              Research Status: Active Deep Dives
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* ── DEEP DIVES ────────────────────────────────────── */}
+      <section className="px-8 max-w-screen-2xl mx-auto">
+        <div className="editorial-grid">
+
+          {/* Left label */}
+          <div className="col-span-12 md:col-span-3 mb-12 md:mb-0">
+            <h2 className="font-headline text-3xl font-bold text-on-surface">
+              Current<br />Deep Dives.
+            </h2>
+            <p className="mt-4 text-on-surface-variant font-body text-sm uppercase tracking-widest leading-loose">
+              Personal research<br />into the global<br />monolith.
+            </p>
+          </div>
+
+          {/* Right: all items */}
+          <div className="col-span-12 md:col-start-5 md:col-span-8 space-y-32">
+            {allDives.map((item) => (
+              <article key={item.num} className="group relative">
+                <div className="flex items-baseline gap-8">
+                  <span className="font-headline text-4xl italic text-outline-variant/40 flex-shrink-0">
+                    {item.num}
+                  </span>
+
+                  <div>
+                    <h3 className="font-headline text-3xl md:text-4xl font-bold mb-4 text-on-surface group-hover:text-primary-container transition-colors duration-300">
+                      {item.title}
+                    </h3>
+                    <p className="font-body text-lg text-on-surface-variant leading-relaxed mb-8 max-w-xl">
+                      {item.desc}
+                    </p>
+                    {item.slug ? (
+                      <Link
+                        href={`/writing/${item.slug}`}
+                        className="research-cta font-label text-xs uppercase tracking-widest font-bold border-b border-primary pb-1"
+                      >
+                        View Project Research
+                        <span className="material-symbols-outlined text-sm" style={{ fontSize: '16px' }}>
+                          arrow_forward
+                        </span>
+                      </Link>
+                    ) : (
+                      <span className="font-label text-xs uppercase tracking-widest font-bold text-outline pb-1 border-b border-outline/30">
+                        Research in Progress
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── NEWSLETTER ────────────────────────────────────── */}
+      <section className="mt-40 bg-surface-container-low py-32 px-8">
+        <div className="max-w-screen-2xl mx-auto editorial-grid">
+          <div className="col-span-12 md:col-start-4 md:col-span-6 text-center">
+            <h2 className="font-headline text-4xl font-bold mb-6 italic text-on-surface">
+              The Monthly Mandate.
+            </h2>
+            <p className="font-body text-on-surface-variant mb-12">
+              I share rigorous insights on capital deployment and structural trends,
+              delivered with surgical precision. No filler.
+            </p>
+            <SubscribeForm />
+          </div>
+        </div>
+      </section>
+
     </div>
-  );
+  )
 }

@@ -2,26 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html, body {
+  background-color: #fcf9f8;
+  color: #1c1b1b;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* 12-column editorial grid */
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+/* Selection */
+::selection {
+  background-color: #001916;
+  color: #ffffff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #fcf9f8; }
+::-webkit-scrollbar-thumb { background: #c0c8c7; }
+::-webkit-scrollbar-thumb:hover { background: #717978; }
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* Material Symbols */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Research item CTA arrow spacing transition */
+.research-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.2s ease;
+}
+.group:hover .research-cta {
+  gap: 1rem;
+}
+
+/* Article table — even row shading */
+.prose table tbody tr:nth-child(even) td {
+  background-color: #f6f3f2;
+}
+
+/* Newsletter input override */
+.mandate-input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(0,25,22,0.2);
+  color: #001916;
+  font-family: var(--font-inter);
+  font-size: 1.125rem;
+  padding: 0.75rem 0;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.mandate-input::placeholder {
+  color: rgba(0,25,22,0.2);
+}
+.mandate-input:focus {
+  border-bottom-color: #001916;
 }

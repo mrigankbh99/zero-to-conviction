@@ -5,7 +5,7 @@ import SubscribeForm from '@/components/subscribe-form'
 const allDives = [
   {
     num: '01',
-    title: 'Stablecoin Remittances & Wealth Management: The India Thesis',
+    title: 'Stablecoin Remittances: A Wedge To NRI Wealth Management',
     slug: 'stablecoins-india-remittance',
     desc: "India receives $137 billion in remittances a year, more than Mexico and China combined. About $8.3 billion of that gets eaten in fees. Here's why stablecoins fix this, and what the real play actually is.",
   },

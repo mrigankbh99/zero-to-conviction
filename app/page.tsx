@@ -82,7 +82,7 @@ export default function Home() {
               Current<br />Deep Dives.
             </h2>
             <p className="mt-4 text-on-surface-variant font-body text-sm uppercase tracking-widest leading-loose">
-              Personal research<br />into the global<br />monolith.
+              Built from hunches, conversations, and time spent building in these spaces myself.
             </p>
           </div>
 

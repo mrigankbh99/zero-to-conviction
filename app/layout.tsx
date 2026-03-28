@@ -18,17 +18,23 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Zero to Conviction — Mrigank",
+    default: "Zero to Conviction",
     template: "%s — Zero to Conviction",
   },
   description:
-    "Observations, thesis, and learnings at the intersection of fintech, AI, and healthcare.",
+    "Observations, Insights, and Everything in Between. By Mrigank",
   openGraph: {
     siteName: "Zero to Conviction",
+    title: "Zero to Conviction",
+    description: "Observations, Insights, and Everything in Between. By Mrigank",
     type: "website",
     locale: "en_US",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zero to Conviction",
+    description: "Observations, Insights, and Everything in Between. By Mrigank",
+  },
 };
 
 export default function RootLayout({

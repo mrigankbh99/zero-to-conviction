@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 export default function Nav() {
@@ -25,6 +26,7 @@ export default function Nav() {
           className="font-headline text-2xl font-black text-primary"
         >
           Zero to Conviction
+          <Image src="/logo-transparent.png" alt="logo" width={24} height={20} className="inline-block ml-2 -mt-1" />
         </Link>
 
         {/* Nav links */}

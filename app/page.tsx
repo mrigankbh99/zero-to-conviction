@@ -33,7 +33,7 @@ export default function Home() {
               />
             </div>
             <p className="mt-6 text-[10px] uppercase tracking-[0.2em] font-bold text-on-surface-variant font-label">
-              Mrigank — Founder &amp; Researcher
+              Mrigank
             </p>
           </div>
 

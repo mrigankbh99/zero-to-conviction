@@ -1,14 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html, body {
+html,
+body {
   background-color: #fcf9f8;
   color: #1c1b1b;
 }
 
 body {
-  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
+  font-family: var(--font-inter), "Inter", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -26,17 +29,31 @@ body {
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #fcf9f8; }
-::-webkit-scrollbar-thumb { background: #c0c8c7; }
-::-webkit-scrollbar-thumb:hover { background: #717978; }
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #fcf9f8;
+}
+::-webkit-scrollbar-thumb {
+  background: #c0c8c7;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #717978;
+}
 
 /* Smooth scroll */
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 /* Material Symbols */
 .material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
   display: inline-block;
   vertical-align: middle;
 }
@@ -61,7 +78,7 @@ html { scroll-behavior: smooth; }
 .mandate-input {
   background: transparent;
   border: none;
-  border-bottom: 2px solid rgba(0,25,22,0.2);
+  border-bottom: 2px solid rgba(0, 25, 22, 0.2);
   color: #001916;
   font-family: var(--font-inter);
   font-size: 1.125rem;
@@ -71,7 +88,7 @@ html { scroll-behavior: smooth; }
   transition: border-color 0.2s ease;
 }
 .mandate-input::placeholder {
-  color: rgba(0,25,22,0.2);
+  color: rgba(0, 25, 22, 0.2);
 }
 .mandate-input:focus {
   border-bottom-color: #001916;

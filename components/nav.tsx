@@ -54,7 +54,7 @@ export default function Nav() {
           href="https://wa.me/919818394095"
           target="_blank"
           rel="noopener noreferrer"
-          className="group"
+          className="hidden md:block group"
         >
           <span className="bg-primary text-on-primary px-4 md:px-6 py-2 md:py-2.5 font-body font-semibold text-xs md:text-sm uppercase tracking-wider group-hover:bg-primary-container transition-all duration-300 block">
             Connect

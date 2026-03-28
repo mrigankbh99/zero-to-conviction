@@ -50,7 +50,7 @@ export default function Home() {
             </h1>
 
             <p className="font-body text-base md:text-lg leading-relaxed text-on-surface-variant">
-              I like building things and I like understanding how industries actually work.
+              I like building things and learning how things actually work.
               Scaled a DeFi product to over a million wallets. Built smaller AI projects,
               healthcare tools, a cooking agent, things I had hunches about, that got to
               interesting places before the conviction ran out. Now I write about what

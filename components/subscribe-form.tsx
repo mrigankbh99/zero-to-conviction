@@ -32,7 +32,7 @@ export default function SubscribeForm() {
         </label>
         <input
           type="email"
-          placeholder="ARCHITECT@CONVICTION.COM"
+          placeholder="GETUPDATES@ZEROTOCONVICTION.COM"
           value={email}
           onChange={e => setEmail(e.target.value)}
           required

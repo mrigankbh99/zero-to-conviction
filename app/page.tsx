@@ -130,11 +130,10 @@ export default function Home() {
         <div className="max-w-screen-2xl mx-auto editorial-grid">
           <div className="col-span-12 md:col-start-4 md:col-span-6 text-center">
             <h2 className="font-headline text-4xl font-bold mb-6 italic text-on-surface">
-              The Monthly Mandate.
+              Join my email list
             </h2>
             <p className="font-body text-on-surface-variant mb-12">
-              I share rigorous insights on capital deployment and structural trends,
-              delivered with surgical precision. No filler.
+              I&apos;m figuring out what&apos;s next. Subscribe if you want to follow along.
             </p>
             <SubscribeForm />
           </div>

@@ -19,14 +19,14 @@ export default function Nav() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#fcf9f8]/80 backdrop-blur-xl">
-      <nav className="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+      <nav className="flex justify-between items-center w-full px-4 md:px-8 py-4 md:py-6 max-w-screen-2xl mx-auto">
         {/* Logo */}
         <Link
           href="/"
-          className="font-headline text-2xl font-black text-primary"
+          className="font-headline text-lg md:text-2xl font-black text-primary flex items-center gap-1.5"
         >
           Zero to Conviction
-          <Image src="/logo-transparent.png" alt="logo" width={24} height={20} className="inline-block ml-2 -mt-1" />
+          <Image src="/logo-transparent.png" alt="logo" width={20} height={16} className="inline-block" />
         </Link>
 
         {/* Nav links */}
@@ -54,12 +54,12 @@ export default function Nav() {
           href="https://wa.me/919818394095"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-end group"
+          className="group"
         >
-          <span className="bg-primary text-on-primary px-6 py-2.5 font-body font-semibold text-sm uppercase tracking-wider group-hover:bg-primary-container transition-all duration-300 block">
+          <span className="bg-primary text-on-primary px-4 md:px-6 py-2 md:py-2.5 font-body font-semibold text-xs md:text-sm uppercase tracking-wider group-hover:bg-primary-container transition-all duration-300 block">
             Connect
           </span>
-          <span className="font-label text-[10px] text-on-surface-variant tracking-widest mt-1">
+          <span className="hidden md:block font-label text-[10px] text-on-surface-variant tracking-widest mt-1 text-right">
             +91 98183 94095
           </span>
         </a>

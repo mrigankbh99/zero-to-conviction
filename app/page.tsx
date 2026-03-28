@@ -17,7 +17,7 @@ export default function Home() {
     <div className="bg-surface text-on-surface">
 
       {/* ── HERO ─────────────────────────────────────────── */}
-      <section className="px-8 max-w-screen-2xl mx-auto mb-20 md:mb-24">
+      <section className="px-4 md:px-8 max-w-screen-2xl mx-auto mb-12 md:mb-24">
         <div className="editorial-grid gap-y-12 items-start">
 
           {/* Photo column */}
@@ -61,7 +61,7 @@ export default function Home() {
       </section>
 
       {/* ── CONVICTION DIVIDER ────────────────────────────── */}
-      <div className="w-full px-8 max-w-screen-2xl mx-auto mb-20">
+      <div className="w-full px-4 md:px-8 max-w-screen-2xl mx-auto mb-12 md:mb-20">
         <div className="w-full h-[1px] bg-outline-variant/30 relative">
           <div className="absolute top-0 left-0 h-[2px] bg-primary w-1/3" />
           <div className="absolute -top-3 left-1/3 transform -translate-x-1/2 bg-surface px-4 py-1">
@@ -73,11 +73,11 @@ export default function Home() {
       </div>
 
       {/* ── DEEP DIVES ────────────────────────────────────── */}
-      <section className="px-8 max-w-screen-2xl mx-auto">
+      <section className="px-4 md:px-8 max-w-screen-2xl mx-auto">
         <div className="editorial-grid">
 
           {/* Left label */}
-          <div className="col-span-12 md:col-span-3 mb-12 md:mb-0">
+          <div className="col-span-12 md:col-span-3 mb-8 md:mb-0">
             <h2 className="font-headline text-3xl font-bold text-on-surface">
               Current<br />Deep Dives.
             </h2>
@@ -87,7 +87,7 @@ export default function Home() {
           </div>
 
           {/* Right: all items */}
-          <div className="col-span-12 md:col-start-5 md:col-span-8 space-y-32">
+          <div className="col-span-12 md:col-start-5 md:col-span-8 space-y-16 md:space-y-32">
             {allDives.map((item) => (
               <article key={item.num} className="group relative">
                 <div className="flex items-baseline gap-8">
@@ -126,7 +126,7 @@ export default function Home() {
       </section>
 
       {/* ── NEWSLETTER ────────────────────────────────────── */}
-      <section className="mt-40 bg-surface-container-low py-32 px-8">
+      <section className="mt-16 md:mt-40 bg-surface-container-low py-16 md:py-32 px-4 md:px-8">
         <div className="max-w-screen-2xl mx-auto editorial-grid">
           <div className="col-span-12 md:col-start-4 md:col-span-6 text-center">
             <h2 className="font-headline text-4xl font-bold mb-6 italic text-on-surface">

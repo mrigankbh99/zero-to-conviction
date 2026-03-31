@@ -1,8 +1,10 @@
 import type { MDXComponents } from 'mdx/types'
 import Link from 'next/link'
+import { Tweet } from 'react-tweet'
 
 export function getMDXComponents(): MDXComponents {
   return {
+    Tweet,
     h2: ({ children, ...props }) => (
       <h2 className="font-headline font-bold tracking-tight" {...props}>
         {children}

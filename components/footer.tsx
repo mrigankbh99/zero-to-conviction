@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 export default function Footer() {
   return (
     <footer className="bg-surface-container-low mt-20 p-12 w-full">
@@ -11,7 +9,7 @@ export default function Footer() {
             Zero to Conviction
           </div>
           <p className="font-label text-xs uppercase tracking-widest text-primary/50">
-            © {new Date().getFullYear()} Zero to Conviction. Intellectual Monolith.
+            © {new Date().getFullYear()} Zero to Conviction.
           </p>
         </div>
 
@@ -37,23 +35,6 @@ export default function Footer() {
             ))}
           </div>
 
-          <div className="flex flex-col gap-4">
-            <span className="font-label text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant">
-              Access
-            </span>
-            {[
-              { label: 'RSS', href: '/rss.xml' },
-              { label: 'Contact', href: '/about' },
-            ].map(({ label, href }) => (
-              <Link
-                key={label}
-                href={href}
-                className="font-label text-xs uppercase tracking-widest text-primary/50 hover:text-primary underline decoration-1 underline-offset-4 transition-colors"
-              >
-                {label}
-              </Link>
-            ))}
-          </div>
         </div>
 
       </div>

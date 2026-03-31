@@ -9,6 +9,12 @@ const allDives = [
     slug: 'stablecoins-india-remittance',
     desc: "India receives $137 billion in remittances a year, more than Mexico and China combined. About $8.3 billion of that gets eaten in fees. Here's why stablecoins fix this, and what the real play actually is.",
   },
+  {
+    num: '02',
+    title: 'How I See Prediction Markets & What Building Raize Taught Me',
+    slug: 'prediction-markets-thesis',
+    desc: "In 2024, I built Raize Club on Starknet where we scaled to 2500+ users, $100K+ in traded volume, and partnered with Armored MMA for live fight markets. Here's my take on what's still broken in the Prediction Markets space, where the whitespaces are + what new plays can be built, and why I'm still bullish.",
+  },
 ]
 
 export default function Home() {

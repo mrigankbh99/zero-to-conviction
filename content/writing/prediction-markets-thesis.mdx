@@ -1,0 +1,151 @@
+---
+title: "How I See Prediction Markets & What Building Raize Taught Me"
+date: "2025-03-15"
+slug: "prediction-markets-thesis"
+tag: "Thesis"
+excerpt: "In 2024, I built Raize Club on Starknet where we scaled to 2500+ users, $100K+ in traded volume, and partnered with Armored MMA for live fight markets. Here's my take on what's still broken in the Prediction Markets space, where the whitespaces are + what new plays can be built, and why I'm still bullish."
+published: true
+---
+
+# Why prediction markets only make sense on-chain
+
+Prediction markets are probably the most intuitive trading instrument that exists for general public. A yes/no contract on a real-world event that anyone is able to understand compared to complex instruments like Options, Futures, or Perpetuals.
+
+The combined volume across Polymarket and Kalshi hit ~$44B in 2025. That sounds big until you compare it to the $600B+ in global sports betting or the trillions in derivatives. This is still very early and most of them are moving on-chain eventually.
+
+Here's a podcast I did on this at the end of 2024: https://x.com/StarknetIN/status/1891509930626359740
+
+In 2024, before the Polymarket boom made prediction markets a mainstream conversation, I built Raize Club: the largest prediction market on Starknet. A lot of people in web3 have touched prediction markets at some point in their speculation cycle. And a growing number of people in India have heard of Polymarket and Kalshi but don't fully get why these things are moving on-chain or what makes them structurally better.
+
+I want to walk through why I tried my hand at prediction markets, what I learned building Raize Club, and where I think this space goes from here including a few specific opportunities I see that nobody's building yet.
+
+## What exactly are prediction markets?
+
+In basic words, these are instruments that allow users to speculate any outcome and trade those. From who wins today's IPL game to who wins the Bengal election, prediction markets allow you to trade/bet your money on those. Interesting most of them allow you to trade probabilities meaning you can buy an outcome at 30% odds and sell at 60% odds enabling interesting strategies on top (thus I like using 'trade' and not 'bet')
+
+When executed at scale, since people put their money where their mouth is, it also ends up being a more realistic representation of "the truth machine" as most web3 degens say
+
+In 2024, Polymarket had Trump at 95% probability before midnight on election day, hours before anyone called it. This sort of blew up the prediction markets to masses
+
+But broadly, they are "yes" or "no" shares for an event that could be bought and sold anytime, from anywhere, and settled with 100% transparency
+
+### How are they different from derivatives and other mechanisms?
+
+A lot of people ask me "how is this different from options or futures?"
+
+Options and futures need you to understand strike prices, expiration mechanics, implied volatility, margin calls. The learning curve is steep and these instruments are designed for sophisticated participants. Prediction markets strip all of that away. You're buying a yes or no share priced between $0 and $1. If you're right, you get $1. Wrong, you get $0. The price IS the probability. A contract at $0.70 means the market thinks there's a 70% chance. That's it.
+
+There's also no house edge baked into the price like sportsbooks do with their vig. On a typical -110 line at DraftKings, you're paying $110 to win $100, the book profits regardless of outcome. In prediction markets, you're trading against other users peer-to-peer. The platform charges a transparent fee (usually under 1%) and done.
+
+And unlike sports betting where you can't exit a bet once placed, prediction market shares are tradeable. Buy at $0.40, sell at $0.70 when new information hits, pocket the difference without waiting for the event to finish. This alone makes it a fundamentally different instrument.
+
+## What problems did web2 versions have?
+
+1. **Restricted geographies which limits liquidity and event coverage:**
+
+    In Web 2, Platforms are limited to specific regions like Probo only operated in India while Kalshi was only US based prediction market. This not just limits users's participation in global events but also results in limited liquidity with smaller pools and event coverage. Web3 markets solve this by allowing global participation without regard to geographical boundaries.
+
+2. **Delayed settlement with barrier of minimum withdrawal amount:**
+
+    Settlements in Web 2 prediction markets are quite slow like PredictIt, US based prediction market often takes 48 hours for settlement. There is also a limitation of having minimum withdrawal amount like $20 in PredictIt. This is quite frustrating for users because they win but can't withdraw that money which reduces their engagement. Web3 platforms allow near-instant settlement due to smart contracts with no strings attached on minimum withdrawal amount.
+
+3. **Low credibility due to fraud risk:**
+
+    Fraud risks in Web 2 are higher because of dependency on centralised operators like in Popular Science Prediction Exchange (PPX) users exploited the platform's pricing algorithm by creating multiple accounts and trading against themselves to artificially inflate prices. At Raize we leveraged transparent and immutable smart contracts to eliminate fraud and proved everything with oracles and zkFetch
+
+4. **Identity and Privacy Issues:**
+
+    Web 2 requires full KYC forcing users to disclose personal information which inherently rely on centralised data storage risking user data breaches like in 2010 Betfair, a major betting exchange experienced a significant data breach where hackers accessed 3.15M user records. Web3 platforms support anonymous participation, preserving user privacy.
+
+
+    | Feature | Web 2 | Web 3 (Us at Raize Club) |
+    | --- | --- | --- |
+    | **Geographical Restrictions** | Restricted by region | Borderless and global |
+    | **Market Fragmentation** | Small pools due to geographic segmentation | Unified, global pool |
+    | **Government Regulation** | Heavily regulated; varies by location | Decentralized, resistant to censorship |
+    | **Payment/Settlement Cycle** | Long, involving intermediaries | Near-instant, via smart contracts |
+    | **Minimum Withdrawal Amount** | High due to processing costs | Low or none; scalable fees in crypto |
+    | **Fraud Possibility** | High due to centralization | Low; smart contracts ensure transparency |
+    | **Identity** | Requires full KYC | Anonymous participation |
+
+This sort of established why a web3 prediction market should make more sense and win, but early 2024, I also saw some whitespaces (some now covered by Polymarket, some still open)
+
+## Where I saw opportunity in prediction markets despite Polymarket and Kalshi? What made me start Raize Club?
+
+**1. Liquidity fragmentation across chains, protocols, and orderbooks**
+
+Different platforms run on different blockchains, which splits up the money (liquidity) that keeps these markets going.
+
+For example, Augur runs on Ethereum, Polymarket needs Polygon. This meant different odds for different events. We wanted to create a unified pool that can supply liquidity or take counter trades across all books - imagine this to be "The House" of the Casino and as we say in the long run, the house always wins
+
+**2. Limited scope of prediction markets in real-time sports events**
+
+Talking to most users of Polymarket, I saw a pattern that users wanted instant gratification but real-world events usually have a long cycle for the event to complete. Back then, Polymarket did not do sports - so this is where we wanted to differentiate, doing high frequency events that bring instant gratification.
+
+Prediction markets like Polymarket can predict US election but what about a sports event? What about a cricket match where odds shift with every ball bowled? Traditional bookmakers already capitalize on these fluctuating odds, but in AMM models, the odds are solely based on the pool sizes, making prediction markets on real-time events basically useless.
+
+We hit this problem directly doing the Armored MMA fights. In a fight, momentum shifts in seconds. A fighter lands a clean shot and the "real" odds swing 30-40% instantly. But in an AMM, the price only moves when someone trades. So either the odds are stale (and arbitrageurs feast) or you need constant active trading which just doesn't happen mid-fight. Polymarket figured this out too eventually and moved to a hybrid CLOB (central limit orderbook) model instead of pure AMM when they launched sports. The orderbook lets market makers update quotes in real-time, which is basically the only way live events work.
+
+For some context on how big this opportunity got: sports now accounts for over 60% of Polymarket's open interest. Kalshi does $1B+ monthly in sports volume alone. DraftKings acquired CFTC-licensed exchange Railbird in late 2025 to build their own prediction market product. CME Group is evaluating sports contracts too. The space went from "Polymarket doesn't do sports" when we started to sports being the primary growth driver, in under 18 months.
+
+**3. Complicated and confusing user experience**
+
+If you want to bet on Polymarket, you need to deposit USDC on the Polygon network. Then you need POL tokens to pay transaction fees. For someone new to crypto, this is overwhelming. Even experienced users find it a hassle to juggle multiple wallets and tokens just to make a simple bet. I still feel most non web-3 native users feel this to be super overwhelming
+
+- Create wallet
+- Buy USDT from p2p
+- Bridge it to Polygon
+- Make sure you get gas token
+- Then finally connect and trade
+
+Most non-web3-native users bounce at step one.
+
+**4. Lack of hyperlocal events**
+
+What if user could bet on things that matter to your daily life, like who will win your local baseball game? Most prediction markets don't offer this kind of personal connection.
+
+Platforms like Augur and Polymarket mostly focus on big events which misses out on a huge opportunity to engage users who care about more local or niche topics. Moreover, these are purely based on US - I feel there is a huge opportunity to build markets that focus on hyperlocal geographies (Agora is a great example of trying to do this now)
+
+I truly feel solving each of these legs even today has a huge market that can be tapped with good tech and growth strategies - the key becomes onboarding users seamlessly
+
+## How we built Raize?
+
+The idea was simple, create an on-chain prediction market with good user experience so that users don't face issues on wtf is a wallet, token, etc but rather simply choose a tonne of fun events curated hyperlocally (we did not do location-wise but we tried going community-wise, thus a huge focus on Starknet relevant events). We created a common "The house" pool that took counter bets and eventually anyone could LP there, in the year that we were live we produced >40% yield for these LPs as "the House" - I called it RLP (Raize Liquidity Pool)
+
+Some context on why the 40%+ worked: prediction markets are structurally positive EV for the house when you have diverse enough event coverage. Most casual bettors overweight favorites and chase narratives. The pool takes the other side at market odds. Across hundreds of events, the math just works out, same reason casinos are profitable businesses. We weren't running a 40% edge on every trade obviously, it's the aggregate across all markets over the year. Some big wins (Trump market was very profitable for the pool), some losses. But the compounded return for LPs who stayed in was north of 40% APY in stablecoin terms. In a DeFi world where most yields are ponzi tokenomics, this was real yield from real economic activity.
+
+We also allowed our infra to be used by other creators to run their hyperlocal events - this meant more trades on our books (RLP) leading to better liquidity and better coverage.
+
+## Some of the highlights from my journey
+
+In our short stint, we had over 2500+ users, had traded >150,000 USD in markets with the Trump market alone settling 35k+ in bets
+
+At our peak, we were official partners for Armored MMA (European MMA that gets 3mn+ views on their fights). We did 6 of their fights officially before shutting down in Q3 of 2025
+
+## Why did I shut it down while still being bullish on prediction markets?
+
+I felt we were too early in the space, the crypto native users preferred Polymarket as it was on EVM while we chose the most robust tech stack with ZK - that meant we had to enable users to move from their mostly used Ethereum wallets into Argent/Braavos and that was a leap not many web3 users took.
+
+Another big reason was the on-ramps/off-ramps were not mature in the space, to onboard real users we wanted to have a no friction solution to get stablecoins and trade but most providers charged >4% on both buy and sell along with exhaustive KYC methods, the coverage from cards, bank transfers, and other instruments was also not exhaustive and faced down times.
+
+This meant most of our energy went into user education than other things, as this gets solved with massive surge of users now knowing about prediction markets - I feel the market will need more players who go hyperlocal, instant dopamine (imagine shift we saw with reels, people want instant games now)
+
+## What would I build differently if I started again?
+
+If I were doing Raize again tomorrow, three things change:
+
+First, chain choice matters more than tech purity. We picked Starknet because the ZK tech was the most robust one, we could create better proofs, enable better user experience like gasless transactions etc but being on EVM (or at least EVM-compatible) is P0 for user adoption right now. You can always migrate to better infra later but you can't recover users who bounced because they couldn't use their MetaMask.
+
+Second, start with one vertical and go deep. We tried doing sports + politics + community events + creator tools all at once. If I did it again, I'd pick one sport in one geography (say Baseball in Philippines) and just own that completely before expanding. We did chain-specific markets and those did work out well
+
+Third, the on-ramp IS the product. We treated fiat on-ramps as an integration problem. It's actually the core product problem. Polymarket figured this out, they now do 60-second wallet-less signup through MoonPay and Stripe (where they must be taking a hit), social login hot wallets, meta-transactions that hide gas costs entirely. The moment a user has to think about "bridging" or "gas tokens," you've already lost them.
+
+## Where do prediction markets go from here?
+
+The numbers tell the story. Polymarket went from $73M volume in 2023 to $9B in 2024 to ~$22B in 2025. Combined with Kalshi that's nearly $44B in 2025. This means there is tremendous growth and as more and more platforms focussing on multiple chains, geographies, and events come up -> more order books become available that means the layer for instituitional strategies and data is set for disruption. 
+
+For example, the spreads on same events across books create good arbitrage opportunities, similarly, mispricing events is another, and we will see a lot of startups trying to make these markets "efficient" and make money on the way. Startups in YC like OddsPool provide that data to funds and traders to make better decision, copy-trading for predictions is another fun category where there are some players now. But broadly a layer of more fun user experience (tinder like structure where you swipe yes or no) or data layers will emerge
+
+The unsolved problems I mentioned earlier are still mostly open. Hyperlocal markets barely exist. Real-time in-play prediction markets are still clunky compared to what traditional bookmakers offer. The UX is better but not "download and bet in 30 seconds" simple for normies. Emerging market on-ramps are still expensive and unreliable - India is an extremely painful market for this
+
+The prediction market that nails the instant dopamine loop and pairs it with frictionless onboarding wins. I'm still looking for the right angle to go build it. Here, a fun idea was mobile friendly 60 sec games that end in an outcome to hit quick dopamine

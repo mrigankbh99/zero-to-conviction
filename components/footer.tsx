@@ -22,8 +22,8 @@ export default function Footer() {
               Channels
             </span>
             {[
-              { label: 'LinkedIn', href: 'https://linkedin.com' },
-              { label: 'Substack', href: 'https://substack.com' },
+              { label: 'X / Twitter', href: 'https://x.com/mrigankbh' },
+              { label: 'LinkedIn', href: 'https://www.linkedin.com/in/mrigankbh99/' },
             ].map(({ label, href }) => (
               <a
                 key={label}
